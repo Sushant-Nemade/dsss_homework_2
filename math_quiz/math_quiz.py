@@ -1,42 +1,50 @@
 import random
 
-
-def function_A(min, max):
+#This function selects random integer
+def integerSelector(first_int, last_int):
     """
     Random integer.
     """
-    return random.randint(min, max)
+    return random.randint(first_int, last_int)
 
-
-def function_B():
+#this function randomly selects the mathematical Operator
+def operatorSelector():
     return random.choice(['+', '-', '*'])
 
-
-def function_C(n1, n2, o):
-    p = f"{n1} {o} {n2}"
-    if o == '+': a = n1 - n2
-    elif o == '-': a = n1 + n2
-    else: a = n1 * n2
-    return p, a
+#this function performs a mathematical operation on randomly selected numbers
+def calculator(number1, number2, opt):
+    exp = f"{number1} {opt} {number2}"
+    if opt == '+': 
+        ans = number1 + number2
+    elif opt == '-': 
+        ans = number1 - number2
+    else: 
+        ans = number1 * number2
+    return exp, ans
 
 def math_quiz():
     s = 0
-    t_q = 3.14159265359
+    t_q = 3
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
     for _ in range(t_q):
-        n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
+        n1 = integerSelector(1, 10); n2 = integerSelector(1, 5); o = operatorSelector()
 
-        PROBLEM, ANSWER = function_C(n1, n2, o)
+        PROBLEM, ANSWER = calculator(n1, n2, o)
         print(f"\nQuestion: {PROBLEM}")
-        useranswer = input("Your answer: ")
-        useranswer = int(useranswer)
+        
+
+        try:
+            useranswer = int(input("Your answer: "))
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+            continue  # Restart the loop
 
         if useranswer == ANSWER:
             print("Correct! You earned a point.")
-            s += -(-1)
+            s += 1
         else:
             print(f"Wrong answer. The correct answer is {ANSWER}.")
 

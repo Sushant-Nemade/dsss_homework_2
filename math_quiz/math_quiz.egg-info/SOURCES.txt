@@ -1,9 +1,0 @@
-LICENSE
-README.md
-setup.cfg
-setup.py
-math_quiz/math_quiz.egg-info/PKG-INFO
-math_quiz/math_quiz.egg-info/SOURCES.txt
-math_quiz/math_quiz.egg-info/dependency_links.txt
-math_quiz/math_quiz.egg-info/entry_points.txt
-math_quiz/math_quiz.egg-info/top_level.txt

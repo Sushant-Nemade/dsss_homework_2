@@ -4,6 +4,7 @@ setup (
     name="math_quiz",
     version="0.1.0",
     packages=find_packages(),
+    url="https://github.com/Sushant-Nemade/dsss_homework_2",
     install_packages=[
         "matplotlib==3.4.3",
     ],
